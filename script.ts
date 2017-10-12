@@ -1,5 +1,4 @@
 $(function() {
-
   class Die {
     index: number;
     value: number;
@@ -25,18 +24,15 @@ $(function() {
       $(`#${this.index}`).append(randomNumber.toString());
     };
   }
-
   let dice = [],
       counter = 0;
-
   function searchIndex(a: number,b) {
     for (let i = 0; i < b.length; i++){
       if (b[i].index === a) {
         return i;
       }
     }
-  } 
-      
+  }   
   $(`#generate`).click( (event) => {
     let newDie = new Die(counter);
 
@@ -44,20 +40,16 @@ $(function() {
     dice.push(newDie);
     counter++;
   })
-
   $(`#roll`).click( (event) => {
     for (let i = 0; i < dice.length; i++) {
       dice[i].roll();
     }
   })
-  
   $(`#sum`).click( (event) => {
     let sumDice = 0;
     for (let i = 0; i < dice.length; i++) {
       sumDice += dice[i].value;
     };
-    
     alert(sumDice);
   })
-
 })
