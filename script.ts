@@ -19,9 +19,8 @@ $(function() {
     };
     roll() {
       let randomNumber = Math.floor(Math.random() * 6) + 1;
-      this.value = randomNumber; 
-      $(`#${this.index}`).empty();
-      $(`#${this.index}`).append(randomNumber.toString());
+      this.value = randomNumber;
+      $(`#${this.index}`).css('background-image', `url(images/face_${this.value}.png)`)
     };
   }
   let dice = [],
@@ -32,7 +31,7 @@ $(function() {
         return i;
       }
     }
-  }   
+  }
   $(`#generate`).click( (event) => {
     let newDie = new Die(counter);
 
